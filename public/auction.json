@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Vintage Pocket Watch",
+        "description": "A beautifully crafted 19th-century gold-plated pocket watch with intricate engravings and a mechanical movement.",
+        "currentBidPrice": 250.0,
+        "timeLeft": "2d 14h 30m",
+        "bidsCount": 12,
+        "image": "https://picsum.photos/id/1015/600/400"
+    },
+    {
+        "id": 2,
+        "title": "Antique Ceramic Vase",
+        "description": "A rare Ming Dynasty-inspired ceramic vase with delicate floral patterns, perfect for collectors.",
+        "currentBidPrice": 450.0,
+        "timeLeft": "1d 8h 15m",
+        "bidsCount": 8,
+        "image": "https://picsum.photos/id/1018/600/400"
+    },
+    {
+        "id": 3,
+        "title": "Signed First Edition Book",
+        "description": "A signed first edition of a classic novel, in excellent condition, a must-have for book enthusiasts.",
+        "currentBidPrice": 120.0,
+        "timeLeft": "3d 22h 45m",
+        "bidsCount": 5,
+        "image": "https://picsum.photos/id/1020/600/400"
+    },
+    {
+        "id": 4,
+        "title": "Vintage Vinyl Record Player",
+        "description": "A fully restored 1960s vinyl record player with a walnut finish, delivering rich, warm sound.",
+        "currentBidPrice": 320.0,
+        "timeLeft": "12h 10m",
+        "bidsCount": 15,
+        "image": "https://picsum.photos/id/1025/600/400"
+    },
+    {
+        "id": 5,
+        "title": "Handcrafted Wooden Chess Set",
+        "description": "A hand-carved wooden chess set with detailed pieces, made from high-quality mahogany and maple.",
+        "currentBidPrice": 180.0,
+        "timeLeft": "4d 5h 20m",
+        "bidsCount": 7,
+        "image": "https://picsum.photos/id/1032/600/400"
+    },
+    {
+        "id": 6,
+        "title": "Antique Brass Telescope",
+        "description": "A 19th-century brass telescope with a polished finish, ideal for collectors or maritime enthusiasts.",
+        "currentBidPrice": 380.0,
+        "timeLeft": "1d 16h 50m",
+        "bidsCount": 9,
+        "image": "https://picsum.photos/id/1035/600/400"
+    },
+    {
+        "id": 7,
+        "title": "Vintage Typewriter",
+        "description": "A fully functional 1950s typewriter with a sleek black finish, perfect for writers and collectors.",
+        "currentBidPrice": 200.0,
+        "timeLeft": "2d 10h 25m",
+        "bidsCount": 6,
+        "image": "https://picsum.photos/id/1040/600/400"
+    },
+    {
+        "id": 8,
+        "title": "Handwoven Persian Rug",
+        "description": "A stunning handwoven Persian rug with intricate patterns, made from high-quality wool.",
+        "currentBidPrice": 600.0,
+        "timeLeft": "5d 3h 15m",
+        "bidsCount": 14,
+        "image": "https://picsum.photos/id/1043/600/400"
+    },
+    {
+        "id": 9,
+        "title": "Vintage Leather Suitcase",
+        "description": "A classic 1940s leather suitcase with brass fittings, ideal for travel enthusiasts or decor.",
+        "currentBidPrice": 150.0,
+        "timeLeft": "18h 40m",
+        "bidsCount": 4,
+        "image": "https://picsum.photos/id/1047/600/400"
+    },
+    {
+        "id": 10,
+        "title": "Antique Oil Painting",
+        "description": "A 19th-century oil painting depicting a serene landscape, framed in an ornate wooden frame.",
+        "currentBidPrice": 750.0,
+        "timeLeft": "3d 12h 55m",
+        "bidsCount": 11,
+        "image": "https://picsum.photos/id/1050/600/400"
+    }
+]
