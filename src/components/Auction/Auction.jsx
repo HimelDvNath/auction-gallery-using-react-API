@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { TbCurrencyDollar } from "react-icons/tb";
+
 // bidsCount: 12;
 // currentBidPrice: 250;
 // description: "A beautifully crafted 19th-century gold-plated pocket watch with intricate engravings and a mechanical movement.";
@@ -10,24 +12,32 @@ import { FaHeart } from "react-icons/fa";
 const Auction = ({ auction }) => {
     console.log(auction);
     return (
-        <div>
-            {
-                <tr className="w-full">
-                    <td className='border border-gray-400 px-4 py-2'>
-                        <p>{auction.title}</p>
-                    </td>
-                    <td className='border border-gray-400 px-4 py-2'>
-                        <p>{auction.currentBidPrice}</p>
-                    </td>
-                    <td className='border border-gray-400 px-4 py-2'>
-                        <p>{auction.timeLeft}</p>
-                    </td>
-                    <td className='border border-gray-400 px-4 py-2'>
-                        <FaHeart size={25} />
-                    </td>
-                </tr>
-            }
-        </div>
+        <tr className='w-full'>
+            <td className='border border-gray-400 px-4 py-2'>
+                <div className='flex gap-5 md:gap-10'>
+                    <img
+                        className='h-[20%] w-[20%] md:h-[10%] md:w-[10%]'
+                        src={auction.image}
+                        alt=''
+                    />
+                    <p>{auction.title}</p>
+                </div>
+            </td>
+            <td className='border border-gray-400 px-4 py-2'>
+                <div className='flex gap-1'>
+                    <TbCurrencyDollar size={20} />
+                    <p> {auction.currentBidPrice}</p>
+                </div>
+            </td>
+            <td className='border border-gray-400 px-4 py-2'>
+                <p>{auction.timeLeft}</p>
+            </td>
+            <td className='border border-gray-400 px-4 py-2'>
+                <div className='flex justify-center items-center'>
+                    <FaHeart size={25} />
+                </div>
+            </td>
+        </tr>
     );
 };
 
