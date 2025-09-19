@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { TbCurrencyDollar } from "react-icons/tb";
-
+import FavouriteItems from "../FavouriteItems/FavouriteItems";
 // bidsCount: 12;
 // currentBidPrice: 250;
 // description: "A beautifully crafted 19th-century gold-plated pocket watch with intricate engravings and a mechanical movement.";
@@ -9,10 +9,12 @@ import { TbCurrencyDollar } from "react-icons/tb";
 // image: "https://picsum.photos/id/1015/600/400";
 // timeLeft: "2d 14h 30m";
 // title: "Vintage Pocket Watch";
-const Auction = ({ auction }) => {
-    console.log(auction);
+const Auction = ({ auction, handleFavouriteItems}) => {
+    
     return (
+        
         <tr className='w-full'>
+            
             <td className='border border-gray-400 px-4 py-2'>
                 <div className='flex gap-5 md:gap-10'>
                     <img
@@ -34,7 +36,7 @@ const Auction = ({ auction }) => {
             </td>
             <td className='border border-gray-400 px-4 py-2'>
                 <div className='flex justify-center items-center'>
-                    <FaHeart size={25} />
+                    <button onClick={() => handleFavouriteItems(auction)} ><FaHeart size={25}/></button>
                 </div>
             </td>
         </tr>
@@ -42,3 +44,4 @@ const Auction = ({ auction }) => {
 };
 
 export default Auction;
+ 
