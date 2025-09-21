@@ -1,22 +1,24 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Auction from "./components/Auction/Auction";
-import Auctions from "./components/Auctions/Auctions";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
-import { FaHeart } from "react-icons/fa";
-import { TbCurrencyDollar } from "react-icons/tb";
 import FavouriteItems from "./components/FavouriteItems/FavouriteItems";
+import toast, { Toaster } from "react-hot-toast";
 function App() {
     const [auctions, setAuctions] = useState([]);
     const [marked, setMarked] = useState([]);
-    const handleFavouriteItems = (markedAuction) => {
-        setMarked([...marked, markedAuction]);
+    const handleFavouriteItems = (markedAuction, ID) => {
+        const newMarked = [...marked];
+        const exists = newMarked.some((mark) => mark.id === ID);
+        if(!exists){
+            setMarked([...marked, markedAuction]);
+        }
+        
     };
-    const handleCloseItems = ID =>{
-        console.log(ID)
-        setMarked(marked.filter(eachMarked => eachMarked.id !== ID));
+    const handleCloseItems = (ID) => {
+        setMarked(marked.filter((eachMarked) => eachMarked.id !== ID));
     };
     // fetch the custom API
     useEffect(() => {
@@ -29,6 +31,7 @@ function App() {
             <Navbar></Navbar>
             <Hero></Hero>
             <div className='bg-gray-700 pb-20'>
+                <Toaster position='top-right' reverseOrder={true} />
                 <div className='p-20 md:px-30 lg:px-45 mb-3'>
                     <h1 className='text-3xl mb-2'>Active Auctions</h1>
                     <p className='opacity-80'>
@@ -61,7 +64,9 @@ function App() {
                                         <Auction
                                             key={auction.id}
                                             auction={auction}
-                                            handleFavouriteItems={handleFavouriteItems}></Auction>
+                                            handleFavouriteItems={
+                                                handleFavouriteItems
+                                            }></Auction>
                                     ))}
                                 </tbody>
                             </table>
@@ -70,8 +75,11 @@ function App() {
                     <div
                         id='favouriteItems'
                         className='right-container bg-gray-400 shadow-2xl rounded-xl flex flex-col p-6 lg:w-1/5'>
-
-                        <FavouriteItems marked={marked} handleCloseItems={handleCloseItems}></FavouriteItems>
+                        <FavouriteItems
+                            marked={marked}
+                            handleCloseItems={
+                                handleCloseItems
+                            }></FavouriteItems>
                     </div>
                 </div>
             </div>

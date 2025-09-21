@@ -1,7 +1,18 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { IoMdClose } from "react-icons/io";
 import { TbCurrencyDollar } from "react-icons/tb";
 const ItemCard = ({ eachAuction, handleCloseItems }) => {
+    const showToast = () => {
+        toast.error("Item removed from Favorite List.!", {
+            duration: 2000, // 2s
+            style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+            },
+        });
+    };
     return (
         <div>
             <div className='flex gap-3 mb-5'>
@@ -19,7 +30,26 @@ const ItemCard = ({ eachAuction, handleCloseItems }) => {
                         </h3>
                         <div className='w-[10%]'>
                             <IoMdClose
-                                onClick={() => handleCloseItems(eachAuction.id)}
+                                onClick={() => {
+                                    {
+                                        <div>
+                                            <Toaster
+                                                position='top-right'
+                                                reverseOrder={true}
+                                                toastOptions={{
+                                                    duration: 2000,
+                                                    style: {
+                                                        borderRadius: "10px",
+                                                        background: "#333",
+                                                        color: "#fff",
+                                                    },
+                                                }}
+                                            />
+                                        </div>;
+                                    }
+                                    handleCloseItems(eachAuction.id);
+                                    showToast();
+                                }}
                                 size={30}
                             />
                         </div>

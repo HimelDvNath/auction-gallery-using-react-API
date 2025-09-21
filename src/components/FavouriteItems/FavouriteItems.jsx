@@ -16,7 +16,7 @@ const FavouriteItems = ({ marked, handleCloseItems}) => {
             <div className='divider'></div>
             {marked.length ? (
                 marked.map((eachAuction) => {
-                   return <ItemCard eachAuction={eachAuction} handleCloseItems={handleCloseItems}></ItemCard>
+                   return <ItemCard key={eachAuction.id} eachAuction={eachAuction} handleCloseItems={handleCloseItems}></ItemCard>
                 })
                
                 
