@@ -32,7 +32,7 @@ function App() {
                     </p>
                 </div>
                 {/* table  */}
-                <div className='flex gap-6 justify-center items-start'>
+                <div className='flex flex-col lg:flex-row gap-6 justify-center items-start'>
                     <div className='left-container bg-gray-400 shadow-2xl rounded-xl'>
                         <div className='overflow-x-auto'>
                             <table className='table-auto border-collapse border border-gray-500 w-full text-center bg-gray-500'>
@@ -65,7 +65,7 @@ function App() {
                     </div>
                     <div
                         id='favouriteItems'
-                        className='right-container bg-gray-400 shadow-2xl rounded-xl flex flex-col p-6 w-1/5'>
+                        className='right-container bg-gray-400 shadow-2xl rounded-xl flex flex-col p-6 lg:w-1/5'>
 
                         <FavouriteItems marked={marked}></FavouriteItems>
                     </div>

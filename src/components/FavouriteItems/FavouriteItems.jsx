@@ -1,10 +1,12 @@
 import React, { useState, memo } from "react";
 import { FaHeart } from "react-icons/fa";
 import { TbCurrencyDollar } from "react-icons/tb";
-const FavouriteItems = ({marked}) => {
-    const totalBidAmount = marked && marked.length
-    ? marked.reduce((acc, item) => acc + (item.currentBidPrice || 0), 0)
-    : 0;
+import ItemCard from "../ItemCard/ItemCard";
+const FavouriteItems = ({ marked }) => {
+    const totalBidAmount =
+        marked && marked.length
+            ? marked.reduce((acc, item) => acc + (item.currentBidPrice || 0), 0)
+            : 0;
     return (
         <div>
             <div className='flex gap-3 items-center justify-center'>
@@ -13,8 +15,14 @@ const FavouriteItems = ({marked}) => {
             </div>
             <div className='divider'></div>
             {marked.length ? (
-                console.log("true")
+                marked.map((eachAuction) => {
+                   return <ItemCard eachAuction={eachAuction}></ItemCard>
+                })
+                
             ) : (
+                // marked.map(eachAuction => {
+                //     console.log(eachAuction)
+                // })
                 <div className='text-center'>
                     <h3 className='text-2xl font-normal'>No favorites yet</h3>
                     <p className='opacity-80'>
@@ -27,9 +35,9 @@ const FavouriteItems = ({marked}) => {
 
             <div className='flex justify-between items-center'>
                 <h3 className='text-2xl font-normal'>Total bids Amount</h3>
-                <div className='flex'>
-                    <TbCurrencyDollar size={20} />
-                    <p>{totalBidAmount}</p>
+                <div className='flex text-lg'>
+                    <TbCurrencyDollar size={25} />
+                    <p className="">{totalBidAmount}</p>
                 </div>
             </div>
         </div>
