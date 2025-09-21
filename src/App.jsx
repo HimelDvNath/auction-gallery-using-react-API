@@ -14,6 +14,10 @@ function App() {
     const handleFavouriteItems = (markedAuction) => {
         setMarked([...marked, markedAuction]);
     };
+    const handleCloseItems = ID =>{
+        console.log(ID)
+        setMarked(marked.filter(eachMarked => eachMarked.id !== ID));
+    };
     // fetch the custom API
     useEffect(() => {
         fetch("auction.json")
@@ -67,7 +71,7 @@ function App() {
                         id='favouriteItems'
                         className='right-container bg-gray-400 shadow-2xl rounded-xl flex flex-col p-6 lg:w-1/5'>
 
-                        <FavouriteItems marked={marked}></FavouriteItems>
+                        <FavouriteItems marked={marked} handleCloseItems={handleCloseItems}></FavouriteItems>
                     </div>
                 </div>
             </div>
